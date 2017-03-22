@@ -2,9 +2,9 @@
 
 ## What this tool does:
 
+(still working on this)
 
-
-## Inputs
+## Getting inputs ready
 
 Before running this tool, you need to run exonerate, using protein sequences as queries and a genome as a target. Use the following exonerate parameters:
 
@@ -26,3 +26,8 @@ perl Exonerate_to_evm_gff3.pl EXONERATE_OUTPUT.TXT > EXONERATE_OUTPUT.GFF3
 
 ## Usage
 
+Finally, use all these input files to create a table of possible pseudogenization events:
+
+```
+perl tabulate_stops_frameshifts.pl QUERY_PROTEINS.fasta EXONERATE_OUTPUT.GFF3 EXONERATE_ERRORS.TXT > STOPS_FRAMESHIFTS.TXT
+```
