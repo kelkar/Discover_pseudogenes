@@ -7,7 +7,7 @@ My tool tries to identify multiple causes of pseudogenization, and their informa
 1. Insertion of stop codons
 *StopCodon_insertion_starts*   
 *StopCodon_insertion_stops*
-- these are coordinates of insertion sites. Dont see any in your data)
+ these are coordinates of insertion sites. Dont see any in your data)
 
 2. Replacement of an amino acid codon with a stop codon
 *StopCodon_replace_starts* -- coordinate of replacement's start position
