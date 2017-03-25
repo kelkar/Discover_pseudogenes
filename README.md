@@ -2,7 +2,31 @@
 
 ## What this tool does:
 
-(still working on this)
+My tool tries to identify multiple causes of pseudogenization, and their information is contained in different columns (column names italicized):
+
+1. Insertion of stop codons
+*StopCodon_insertion_starts*   
+*StopCodon_insertion_stops*
+- these are coordinates of insertion sites. Dont see any in your data)
+
+2. Replacement of an amino acid codon with a stop codon
+*StopCodon_replace_starts* -- coordinate of replacement's start position
+*StopCodon_replacement* -- sequence of the new stop codon
+*Original_AminoAcid*    -- identity of the original amino acid
+*Original_codon* -- sequence of the original codon.
+
+3. Frameshift
+*Frameshift_start*    --
+*Frameshift_length*    --
+*Frameshift_insertion*  -- all these are intuitive
+
+The last column (named *Sequence_of_events*) is list the sequence of events, from the starting codon to the last codon of the alignment. As you can see, in many of your cases, each of the pseudogene-like hits has multiple issues.. usually starting with a replacement by stop codon (R) that is often followed by frameshifts (F)
+
+The column *modified* is 1 if above columns are populated, and 0 if not.
+
+The column *t1* is useless. 
+
+
 
 ## Getting inputs ready
 
@@ -29,5 +53,5 @@ perl Exonerate_to_evm_gff3.pl EXONERATE_OUTPUT.TXT > EXONERATE_OUTPUT.GFF3
 Finally, use all these input files to create a table of possible pseudogenization events:
 
 ```
-perl tabulate_stops_frameshifts.pl QUERY_PROTEINS.fasta EXONERATE_OUTPUT.GFF3 EXONERATE_ERRORS.TXT > STOPS_FRAMESHIFTS.TXT
+perl tabulate_stops_frameshifts.pl QUERY_CDS_SEQUENCES.fasta EXONERATE_OUTPUT.GFF3 EXONERATE_ERRORS.TXT > STOPS_FRAMESHIFTS.TXT
 ```
