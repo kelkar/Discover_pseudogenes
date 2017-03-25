@@ -4,21 +4,21 @@
 
 My tool tries to identify multiple causes of pseudogenization, and their information is contained in different columns (column names italicized):
 
-1. Insertion of stop codons
-*StopCodon_insertion_starts*   
-*StopCodon_insertion_stops*
- these are coordinates of insertion sites. Dont see any in your data)
+A. Insertion of stop codons
+- *StopCodon_insertion_starts*
+- *StopCodon_insertion_stops*
+these are coordinates of insertion sites.
 
-2. Replacement of an amino acid codon with a stop codon
-*StopCodon_replace_starts* -- coordinate of replacement's start position
-*StopCodon_replacement* -- sequence of the new stop codon
-*Original_AminoAcid*    -- identity of the original amino acid
-*Original_codon* -- sequence of the original codon.
+B. Replacement of an amino acid codon with a stop codon
+- *StopCodon_replace_starts* -- coordinate of replacement's start position
+- *StopCodon_replacement* -- sequence of the new stop codon
+- *Original_AminoAcid*    -- identity of the original amino acid
+- *Original_codon* -- sequence of the original codon.
 
-3. Frameshift
-*Frameshift_start*    --
-*Frameshift_length*    --
-*Frameshift_insertion*  -- all these are intuitive
+C. Frameshift
+- *Frameshift_start*    --
+- *Frameshift_length*    --
+- *Frameshift_insertion*  -- all these are intuitive
 
 The last column (named *Sequence_of_events*) is list the sequence of events, from the starting codon to the last codon of the alignment. As you can see, in many of your cases, each of the pseudogene-like hits has multiple issues.. usually starting with a replacement by stop codon (R) that is often followed by frameshifts (F)
 
